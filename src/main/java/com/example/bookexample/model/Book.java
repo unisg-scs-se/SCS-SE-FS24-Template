@@ -15,6 +15,7 @@ public class Book {
     private String title;
 
 
+    // this is the constructor
     public Book(String author, String title) {
         this.author = author;
         this.title = title;
