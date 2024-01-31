@@ -12,9 +12,9 @@ import java.util.ArrayList;
 @Service // or @Service("BookService")
 public class BookServiceImpl implements BookService {
 
-    private BookRepository bookRepository;
+    private BookRepository bookRepository; // the underlying JPA repository
 
-    ArrayList<Book> bookList = new ArrayList<>();
+    ArrayList<Book> bookList = new ArrayList<>(); // this caches the database
 
     @Autowired
     public BookServiceImpl(BookRepository bookRepository) {
