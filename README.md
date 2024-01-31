@@ -1,7 +1,4 @@
-# SCS-SE-FS24-Template
+# SCS-SE-FS24-Experiments
 
-This is an example project including the ci/cd-Pipeline
+Playground for some code management experiments.
 
-Hagen was here
-
-Marco followed
