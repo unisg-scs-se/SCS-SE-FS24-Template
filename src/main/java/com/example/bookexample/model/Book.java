@@ -14,6 +14,8 @@ public class Book {
     private String author; // This is the first author of the book
     private String title;
 
+    //TODO: Here we need to add the part for the library, for now it is just a placeholder as I don't have time to implement it now.
+
     private String editor;
 
 
