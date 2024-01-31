@@ -14,7 +14,7 @@ public class BookServiceImpl implements BookService {
 
     private BookRepository bookRepository;
 
-    ArrayList<Book> bookList = new ArrayList<>();
+    ArrayList<Book> bookList = new ArrayList<>(); // this caches the database
 
     @Autowired
     public BookServiceImpl(BookRepository bookRepository) {
