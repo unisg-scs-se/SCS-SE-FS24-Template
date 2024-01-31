@@ -17,6 +17,8 @@ public class AdvancedBook {
     private String isbn;
     private double price;
     private int noOfPages;
+    private String editor;
+    private double discountedprice;
 
 
 }
