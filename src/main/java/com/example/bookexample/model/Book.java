@@ -14,11 +14,14 @@ public class Book {
     private String author;
     private String title;
 
+    private String editor;
+
 
     // this is the constructor
     public Book(String author, String title) {
         this.author = author;
         this.title = title;
+        this.editor = editor;
     }
 
     public Book() {
@@ -43,6 +46,10 @@ public class Book {
 
 
     public long getId() { return id;}
+
+    public String getEditor() {return editor;}
+
+    public void setEditor(String editorName) {this.editor = editorName;}
 
     public void injectId(long id) { this.id = id;}
     // not providing the public Setter with the expected name setId renders fields in the generated GridCrud uneditable
