@@ -41,3 +41,36 @@ services:
       - "traefik.http.routers.app.tls=true"
       - "traefik.http.routers.app.entryPoints=web,websecure"
       - "traefik.http.routers.app.tls.certresolver=le"
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password --ssl=0
+    restart: always
+    environment:
+      MYSQL_DATABASE: teaching
+      MYSQL_ROOT_PASSWORD: pkjFx3sgoKuxe_Jck9Nu
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+        #labels:
+        #- "traefik.enable=true"
+        #- "traefik.tcp.routers.db.rule=HostSNI(`*`)"
+        #- "traefik.tcp.routers.db.entryPoints=db"
+        #- "traefik.tcp.routers.adminer.tls=true"
+        #- "traefik.tcp.routers.adminer.tls.certresolver=le"
+
+  adminer:
+    image: adminer
+    restart: always
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+    ports:
+      - 8080:8080
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.adminer.rule=Host(`dbadmin.${PUB_IP}.se.scs.unisg.ch`)"
+      - "traefik.http.routers.adminer.tls=true"
+      - "traefik.http.routers.adminer.entryPoints=web,websecure"
+      - "traefik.http.routers.adminer.tls.certresolver=le"
+      
